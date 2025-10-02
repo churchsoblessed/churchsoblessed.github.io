@@ -1,0 +1,48 @@
+---
+layout: page
+title: Events
+permalink: /events/
+---
+
+## Upcoming Events
+
+Stay connected with what's happening at Church So Blessed International. Join us for worship services, special events, and community activities.
+
+<div class="events-list">
+{% assign today = site.time | date: '%Y-%m-%d' %}
+{% assign upcoming_events = site.events | sort: 'date' | where_exp: "event", "event.date >= today" %}
+
+{% if upcoming_events.size > 0 %}
+  {% for event in upcoming_events %}
+  <div class="event-item">
+    <div class="event-date-badge">
+      <span class="month">{{ event.date | date: "%b" }}</span>
+      <span class="day">{{ event.date | date: "%d" }}</span>
+      <span class="year">{{ event.date | date: "%Y" }}</span>
+    </div>
+    <div class="event-info">
+      <h3><a href="{{ event.url | relative_url }}">{{ event.title }}</a></h3>
+      <p class="event-time">⏰ {{ event.time }}</p>
+      <p class="event-location">📍 {{ event.location }}</p>
+      <p class="event-excerpt">{{ event.excerpt | strip_html | truncate: 150 }}</p>
+      <a href="{{ event.url | relative_url }}" class="read-more">Read More →</a>
+    </div>
+  </div>
+  {% endfor %}
+{% else %}
+  <p>No upcoming events at this time. Check back soon!</p>
+{% endif %}
+</div>
+
+## Regular Schedule
+
+**Sunday Services:**
+- Morning Worship: 9:00 AM
+- Evening Service: 6:00 PM
+
+**Wednesday:**
+- Bible Study: 7:00 PM
+
+---
+
+Want to stay updated on our events? [Contact us](/contact) to join our mailing list!
