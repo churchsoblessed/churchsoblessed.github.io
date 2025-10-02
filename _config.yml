@@ -1,0 +1,39 @@
+# Site settings
+title: Church So Blessed International
+email: info@churchsoblessed.org
+description: >-
+  Welcome to Church So Blessed International. A community of faith, hope, and love.
+  Join us for worship, fellowship, and spiritual growth.
+baseurl: ""
+url: "https://churchsoblessed.github.io"
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  events:
+    output: true
+    permalink: /events/:title/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .gitignore
+
+# Navigation
+header_pages:
+  - index.md
+  - about.md
+  - events.md
+  - contact.md

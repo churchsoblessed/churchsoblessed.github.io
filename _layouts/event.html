@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="event">
+  <header class="event-header">
+    <h1 class="event-title">{{ page.title }}</h1>
+    <div class="event-meta">
+      <p class="event-date">📅 {{ page.date | date: "%B %d, %Y" }}</p>
+      <p class="event-time">⏰ {{ page.time }}</p>
+      <p class="event-location">📍 {{ page.location }}</p>
+    </div>
+  </header>
+
+  <div class="event-content">
+    {{ content }}
+  </div>
+
+  <div class="event-back">
+    <a href="{{ '/events' | relative_url }}">← Back to Events</a>
+  </div>
+</article>
