@@ -9,11 +9,10 @@ permalink: /events/
 Stay connected with what's happening at Church So Blessed International. Join us for worship services, special events, and community activities.
 
 <div class="events-list">
-{% assign today = site.time | date: '%Y-%m-%d' %}
-{% assign upcoming_events = site.events | sort: 'date' | where_exp: "event", "event.date >= today" %}
+{% assign sorted_events = site.events | sort: 'date' %}
 
-{% if upcoming_events.size > 0 %}
-  {% for event in upcoming_events %}
+{% if sorted_events.size > 0 %}
+  {% for event in sorted_events %}
   <div class="event-item">
     <div class="event-date-badge">
       <span class="month">{{ event.date | date: "%b" }}</span>

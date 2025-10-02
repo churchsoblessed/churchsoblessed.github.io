@@ -17,9 +17,8 @@ layout: default
     <section class="upcoming-events">
       <h2>Upcoming Events</h2>
       <div class="events-grid">
-        {% assign today = site.time | date: '%Y-%m-%d' %}
-        {% assign upcoming_events = site.events | sort: 'date' | where_exp: "event", "event.date >= today" %}
-        {% for event in upcoming_events limit:3 %}
+        {% assign sorted_events = site.events | sort: 'date' %}
+        {% for event in sorted_events limit:3 %}
           <div class="event-card">
             <div class="event-date">
               <span class="month">{{ event.date | date: "%b" }}</span>
